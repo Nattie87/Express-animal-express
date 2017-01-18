@@ -1,0 +1,20 @@
+<% if (error) { %>
+  <div class="alert alert-danger text-center" role="alert"><%= error %></div>
+<% } %>
+
+<section class="container">
+  <h1>Edit Animal</h1>
+  <form action="/animals/<%= animal._id %>" method="post">
+    <input type="hidden" name="_method" value="put">
+
+    <div class="form-group">
+      <label for="animal_species">Title</label>
+      <input type="text" class="form-control" id="animal_species" name="animal[species]" placeholder="Title" value="<%= animal.species %>">
+    </div>
+    <div class="form-group">
+      <label for="animal_description">Description</label>
+      <textarea class="form-control" id="animal_description" name="animal[description]" placeholder="Description"><%= animal.description %></textarea>
+    </div>
+    <button type="submit" class="btn btn-primary">Submit</button>
+  </form>
+</section>
